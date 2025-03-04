@@ -1,0 +1,68 @@
+[project]
+name = "yutto-uiya"
+version = "1.0.2"
+description = ""
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+     "numpy==1.26.4",
+     "matplotlib==3.10.0"
+]
+authors = [{ name = "MrXnneHang", email = "XnneHang@gmail.com" }]
+keywords = []
+license = { text = "MIT" }
+classifiers = [
+  "Operating System :: OS Independent",
+  "License :: OSI Approved :: MIT License",
+  "Typing :: Typed",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+
+[project.urls]
+Homepage = "https://github.com/MrXnneHang/test-uv-index"
+Documentation = "https://github.com/MrXnneHang/test-uv-index"
+Repository = "https://github.com/MrXnneHang/test-uv-index"
+Issues = "https://github.com/MrXnneHang/test-uv-index/issues"
+
+[project.scripts]
+test-uv = "test.__main__:main"
+
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[[tool.uv.index]]
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+explicit = true
+
+[[tool.uv.index]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+explicit = true
+
+[tool.uv.sources]
+numpy = [
+      { index = "tsinghua"},
+]
+
+matplotlib = [
+      { index = "aliyun"}
+]
+
+[tool.pyright]
+include = ["src/test"]
+pythonVersion = "3.10"
+typeCheckingMode = "strict"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/test"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
