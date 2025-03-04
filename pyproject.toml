@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
      "numpy==1.26.4",
-     "matplotlib==3.10.0"
+     "matplotlib==3.10.1",
 ]
 authors = [{ name = "MrXnneHang", email = "XnneHang@gmail.com" }]
 keywords = []
@@ -37,23 +37,14 @@ test-uv = "test.__main__:main"
 members = ["packages/*"]
 
 [[tool.uv.index]]
+# Optional name for the index. 这个可以不写
 name = "tsinghua"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-explicit = true
+default = true
 
 [[tool.uv.index]]
 name = "aliyun"
 url = "https://mirrors.aliyun.com/pypi/simple/"
-explicit = true
-
-[tool.uv.sources]
-numpy = [
-      { index = "tsinghua"},
-]
-
-matplotlib = [
-      { index = "aliyun"}
-]
 
 [tool.pyright]
 include = ["src/test"]
