@@ -26,7 +26,7 @@ torch = [
 还有一些值得注意的地方, 比如, 每个 torch 一般都只支持两个 python 版本, 所以你应该及时约束避免别人默认安装时报错:
 
 ```shell
-➜  test-uv-index git:(master) ✗ uv run test-uv 
+➜  test-uv-index git:(master) ✗ uv run test-uv   
 Using CPython 3.13.0
 Creating virtual environment at: .venv
 error: Distribution `torch==2.1.0+cpu @ registry+https://mirror.nju.edu.cn/pytorch/whl/cpu/` can't be installed because it doesn't have a source distribution or wheel for the current platform
@@ -35,7 +35,7 @@ error: Distribution `torch==2.1.0+cpu @ registry+https://mirror.nju.edu.cn/pytor
 ## 运行:
 
 ```shell
-git clone https://github.com/MrXnneHang/test-uv-index
+git clone https://github.com/MrXnneHang/test-uv-index.git    
 cd test-uv-index
 uv run test-uv
 ```
